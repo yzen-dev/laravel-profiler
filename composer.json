@@ -1,0 +1,62 @@
+{
+  "name": "yzen.dev/laravel-profiler",
+  "version": "0.0.1",
+  "description": "",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": "MIT",
+  "keywords": [ "laravel", "profiler", "debug", "breadcrumbs" ],
+  "authors": [
+    {
+      "name": "Andey Iatsenko",
+      "email": "yzen.dev@gmail.com"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Profiler\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^7.4 | ^8.0",
+    "illuminate/http": "^v8.0",
+    "illuminate/contracts": "^v8.0",
+    "illuminate/database": "^v8.0",
+    "illuminate/support": "^v8.0"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^0.12.37",
+    "phpunit/phpunit": "9.5.20",
+    "squizlabs/php_codesniffer": "*"
+  },
+  "support": {
+    "issues": "https://github.com/yzen-dev/laravel-profiler/issues",
+    "source": "https://github.com/yzen-dev/laravel-profiler"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Profiler\\ServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "phpunit": [
+      "./vendor/phpunit/phpunit/phpunit --configuration ./phpunit.xml"
+    ],
+    "phpstan": [
+      "./vendor/bin/phpstan analyse -c ./phpstan.neon src"
+    ],
+    "phpcs": [
+      "./vendor/bin/phpcs --standard=./phpcs.xml -n --no-cache"
+    ]
+  }
+}
